@@ -6,7 +6,7 @@ Release:	1
 License:	GPL
 Vendor:		Jerome Couderc <j.couderc@ifrance.com>
 Group:		X11/Applications
-Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/easytag/%{name}-%{version}.tar.bz2
+Source0:	http://dl.sourceforge.net/easytag/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-no_inclusion_patch_in_configurein.patch
 Patch1:		%{name}-desktop.patch
 Patch2:		%{name}-ac_fix.patch
