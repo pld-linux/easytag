@@ -1,24 +1,27 @@
 # TODO:
 #	fix desktop file encoding and Categories
-# 
+#
+%define		_pre pre3
+
 Summary:	ID3 tag editor
 Summary(pl):	Edytor etykiet ID3
 Name:		easytag
 Version:	0.31
-Release:	1
+Release:	0.1
+Epoch:		1
 License:	GPL v2
 Group:		X11/Applications/Sound
-Source0:	http://dl.sourceforge.net/easytag/%{name}-%{version}.tar.bz2
-# Source0-md5:	9cfb29a81f251891ec4dbae4cd39821d
+Source0:	http://dl.sourceforge.net/easytag/%{name}-%{version}_gtk2.4_%{_pre}.tar.bz2
+# Source0-md5:	bcd25636ad909d3605a715af776ccd3c
 Patch0:		%{name}-desktop.patch
 URL:		http://easytag.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	flac-devel >= 1.1.0
 BuildRequires:	gettext-devel
-BuildRequires:	gtk+-devel      >= 1.2.7
-BuildRequires:	id3lib-devel    >= 3.8.2
-BuildRequires:	libogg-devel    >= 1.0
+BuildRequires:	gtk+2-devel >= 2.4.0
+BuildRequires:	id3lib-devel >= 3.8.2
+BuildRequires:	libogg-devel >= 1.0
 BuildRequires:	libtool
 BuildRequires:	libvorbis-devel >= 1.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -26,7 +29,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 EasyTAG is an utility for viewing, editing and writing tags of your
 MP3, MP2, FLAC, OGG, MusePack and Monkey's Audio files. Its simple
-and nice GTK+ interface makes tagging easier.
+and nice GTK+2 interface makes tagging easier.
 
 Features:
   - View, edit, write tags of MP3, MP2, FLAC files (supporting ID3v2 and
@@ -49,7 +52,7 @@ Features:
 %description -l pl
 EasyTAG to narzêdzie do przegl±dania, modyfikowania i zapisywania
 etykiet (tagów) w plikach MP3, MP2, FLAC, OGG, MusePack i Monkey's
-Audio. Prosty i mi³y interfejs GTK+ u³atwia to zadanie.
+Audio. Prosty i mi³y interfejs GTK+2 u³atwia to zadanie.
 
 Mo¿liwo¶ci:
  - przegl±danie, modyfikowanie, zapisywanie etykiet w plikach MP3,
@@ -72,16 +75,16 @@ Mo¿liwo¶ci:
  - wyszukiwanie plików.
 
 %prep
-%setup -q
-%patch0 -p1
+%setup -q -n %{name}-%{version}_gtk2.4_%{_pre}
+#%patch0 -p1
 
 %build
-%{__gettextize}
-%{__libtoolize}
-%{__aclocal}
-%{__autoconf}
-%{__autoheader}
-%{__automake}
+#%{__gettextize}
+#%{__libtoolize}
+#%{__aclocal}
+#%{__autoconf}
+#%{__autoheader}
+#%{__automake}
 %configure
 %{__make}
 
