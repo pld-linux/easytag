@@ -7,10 +7,9 @@ License:	GPL
 Vendor:		Jerome Couderc <j.couderc@ifrance.com>
 Group:		X11/Applications
 Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/easytag/%{name}-%{version}.tar.gz
-Patch0:		%{name}-ac.patch
 URL:		http://easytag.sourceforge.net/
 BuildRequires:	gtk+-devel      >= 1.2.7
-BuildRequires:	id3lib-devel    >= 3.7.12
+BuildRequires:	id3lib-devel    >= 3.7.13
 BuildRequires:	libogg-devel    >= 1.0
 BuildRequires:	libvorbis-devel >= 1.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -66,7 +65,6 @@ Mo¿liwo¶ci:
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 gettextize --copy --force
@@ -80,19 +78,8 @@ aclocal
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
-
-install -d $RPM_BUILD_ROOT%{_applnkdir}/Multimedia
-cat > $RPM_BUILD_ROOT%{_applnkdir}/Multimedia/easytag.desktop <<EOF
-[Desktop Entry]
-Name=EasyTAG
-Comment=An utility for viewing/editing MP3 and OGG tags with a GTK+ GUI.
-TryExec=easytag
-Exec=easytag
-Icon=EasyTAG.xpm
-Terminal=0
-Type=Application
-EOF
+	DESTDIR=$RPM_BUILD_ROOT \
+	gnome_menudir=%{_applnkdir}/Multimedia
 
 %find_lang %{name}
 
