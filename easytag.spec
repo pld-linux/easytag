@@ -25,12 +25,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 EasyTAG is an utility for viewing, editing and writing tags of your
-MP3, MP2, FLAC, OGG, MusePack and Monkey's Audio files. Its simple
+MP3, MP2, FLAC, Ogg, MusePack and Monkey's Audio files. Its simple
 and nice GTK+ interface makes tagging easier.
 
 Features:
   - View, edit, write tags of MP3, MP2, FLAC files (supporting ID3v2 and
-    ID3v1.x specifications), OGG files, MusePack and Monkey's Audio
+    ID3v1.x specifications), Ogg files, MusePack and Monkey's Audio
   - Auto tagging: parse filename and directory to complete automatically
     the fields (using masks),
   - Ability to rename files from the tag (using masks) or by loading a
@@ -48,12 +48,12 @@ Features:
 
 %description -l pl
 EasyTAG to narzêdzie do przegl±dania, modyfikowania i zapisywania
-etykiet (tagów) w plikach MP3, MP2, FLAC, OGG, MusePack i Monkey's
+etykiet (tagów) w plikach MP3, MP2, FLAC, Ogg, MusePack i Monkey's
 Audio. Prosty i mi³y interfejs GTK+ u³atwia to zadanie.
 
 Mo¿liwo¶ci:
  - przegl±danie, modyfikowanie, zapisywanie etykiet w plikach MP3,
-   MP2, FLAC (z obs³ug± formatów ID3v2 i ID3v1.x), OGG, MusePack
+   MP2, FLAC (z obs³ug± formatów ID3v2 i ID3v1.x), Ogg, MusePack
    i Monkey's Audio
  - automatyczne etykietowanie: tworzenie pól na podstawie nazwy pliku
    i katalogu (przy u¿yciu masek)
