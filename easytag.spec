@@ -22,8 +22,10 @@ BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2.4.0
 BuildRequires:	id3lib-devel >= 3.8.2
 BuildRequires:	libogg-devel >= 1.0
+BuildRequires:	libstdc++-static
 BuildRequires:	libtool
 BuildRequires:	libvorbis-devel >= 1.0
+BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
