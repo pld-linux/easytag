@@ -6,13 +6,13 @@
 Summary:	ID3 tag editor
 Summary(pl):	Edytor etykiet ID3
 Name:		easytag
-Version:	0.31
+Version:	1.99.1
 Release:	0.1
 Epoch:		1
 License:	GPL v2
 Group:		X11/Applications/Sound
-Source0:	http://dl.sourceforge.net/easytag/%{name}-%{version}_gtk2.4_%{_pre}.tar.bz2
-# Source0-md5:	bcd25636ad909d3605a715af776ccd3c
+Source0:	http://dl.sourceforge.net/easytag/%{name}-%{version}.tar.bz2
+# Source0-md5:	23ab19b5b8a57c4ac34bee167d0f05a9
 Patch0:		%{name}-desktop.patch
 URL:		http://easytag.sourceforge.net/
 BuildRequires:	autoconf
@@ -20,7 +20,7 @@ BuildRequires:	automake
 BuildRequires:	flac-devel >= 1.1.0
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2.4.0
-BuildRequires:	id3lib-devel >= 3.8.2
+BuildRequires:	id3lib-devel >= 3.8.3
 BuildRequires:	libogg-devel >= 1.0
 BuildRequires:	libstdc++-static
 BuildRequires:	libtool
@@ -77,7 +77,7 @@ Mo¿liwo¶ci:
  - wyszukiwanie plików.
 
 %prep
-%setup -q -n %{name}-%{version}_gtk2.4_%{_pre}
+%setup -q
 #%patch0 -p1
 
 %build
