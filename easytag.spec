@@ -2,7 +2,7 @@ Summary:	Tag editor for MP3 and OGG files
 Summary(pl):	Edytor etykiet plików MP3 i OGG
 Name:		easytag
 Version:	0.30
-Release:	2
+Release:	3
 License:	GPL
 Vendor:		Jerome Couderc <j.couderc@ifrance.com>
 Group:		X11/Applications
@@ -16,6 +16,7 @@ Patch3:		%{name}-errno.patch
 Patch4:		%{name}-0.30a.patch
 Patch5:		%{name}-0.30b.patch
 Patch6:		%{name}-0.30c.patch
+Patch7:		%{name}-0.30d.patch
 URL:		http://easytag.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -83,6 +84,7 @@ Mo¿liwo¶ci:
 %patch4 -p1
 %patch5 -p1
 %patch6 -p1
+%patch7 -p1
 
 %build
 rm -f missing
