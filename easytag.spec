@@ -10,15 +10,12 @@ Source0:	http://dl.sourceforge.net/easytag/%{name}-%{version}.tar.bz2
 # Source0-md5:	f5452c6ce7752dc2ebd9a984bc038a9d
 Patch0:		%{name}-desktop.patch
 URL:		http://easytag.sourceforge.net/
-BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	flac-devel >= 1.1.0
 BuildRequires:	gettext-devel
-BuildRequires:	gtk+2-devel >= 2.4.0
+BuildRequires:	gtk+2-devel >= 2:2.4.0
 BuildRequires:	id3lib-devel >= 3.8.3
-BuildRequires:	libogg-devel >= 1.0
-BuildRequires:	libstdc++-static
-BuildRequires:	libtool
+BuildRequires:	libogg-devel >= 2:1.0
 BuildRequires:	libvorbis-devel >= 1:1.0
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -76,11 +73,13 @@ Mo¿liwo¶ci:
 %patch0 -p1
 
 %build
+cp -f /usr/share/automake/config.* .
 %configure
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
