@@ -67,7 +67,7 @@ Mo¿liwo¶ci:
 %setup -q
 
 %build
-gettextize --copy --force
+%{__gettextize}
 autoheader
 aclocal
 %{__autoconf}
