@@ -1,18 +1,19 @@
-Summary:	Tag editor for MP3 and OGG files.
+Summary:	Tag editor for MP3 and OGG files
+Summary(pl):	Edytor etykiet plików MP3 i OGG
 Name:		easytag
 Version:	0.20
 Release:	1
 License:	GPL
-URL:		http://easytag.sourceforge.net/
+Vendor:		Jerome Couderc <j.couderc@ifrance.com>
 Group:		X11/Applications
 Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/easytag/%{name}-%{version}.tar.gz
 Patch0:		%{name}-ac.patch
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Vendor:		Jerome Couderc <j.couderc@ifrance.com>
+URL:		http://easytag.sourceforge.net/
 BuildRequires:	gtk+-devel      >= 1.2.7
 BuildRequires:	id3lib-devel    >= 3.7.12
 BuildRequires:	libogg-devel    >= 1.0
 BuildRequires:	libvorbis-devel >= 1.0
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define    _prefix    /usr/X11R6
 
@@ -37,9 +38,31 @@ Features:
   - A list to select files,
   - Simple and explicit interface!,
   - A playlist generator window,
-  - A file searching window,
-  - Written in C and uses GTK+ 1.2 for the GUI.
+  - A file searching window.
 
+%description -l pl
+EasyTAG to narzêdzie do przegl±dania, modyfikownia i zapisywania
+etykiet (tagów) w plikach MP3, MP2, FLAC i OGG. Prosty i mi³y
+interfejs GTK+ u³atwia to zadanie.
+
+Mo¿liwo¶ci:
+ - przegl±danie, modyfikowanie, zapisywanie etykiet w plikach MP3,
+   MP2, FLAC (z obs³ug± formatów ID3v2 i ID3v1.x) i OGG
+ - automatyczne etykietowanie: tworzenie pól na podstawie nazwy pliku
+   i katalogu (przy u¿yciu masek)
+ - mo¿liwo¶æ zmiany nazw plików na podstawie etykiet (przy u¿yciu
+   masek) lub wczytuj±c je z pliku tekstowego
+ - obróbka wszystkich plików w podanym katalogu
+ - mo¿liwo¶æ przegl±dania podkatalogów
+ - rekurencja przy etykietowaniu, usuwaniu, zmianie nazw, zapisywaniu
+ - mo¿liwo¶æ ustawienia pola (wykonawca, tytu³...) we wszystkich
+   pozosta³ych plikach
+ - wczytywanie i wy¶wietlanie informacji z nag³ówka (czas, jako¶æ)
+ - przegl±darka bazuj±ca na drzewie
+ - lista z wyborem plików
+ - prosty inferfejs
+ - generowanie playlist
+ - wyszukiwanie plików.
 
 %prep
 %setup -q
@@ -71,15 +94,15 @@ Terminal=0
 Type=Application
 EOF
 
+%find_lang %{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc ChangeLog INSTALL COPYING README TODO THANKS USERS-GUIDE
-%prefix/bin/easytag
-%prefix/share/gnome/apps/Multimedia/easytag.desktop
-%{_sysconfdir}/X11/applnk/Multimedia/easytag.desktop
-%prefix/share/pixmaps/*
-%prefix/share/easytag/*
-%prefix/share/locale/*/*/*
+%attr(755,root,root) %{_bindir}/easytag
+%{_applnkdir}/Multimedia/easytag.desktop
+%{_pixmapsdir}/*
+%{_datadir}/easytag
