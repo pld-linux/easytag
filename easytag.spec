@@ -23,7 +23,6 @@ BuildRequires:	libogg-devel    >= 1.0
 BuildRequires:	libvorbis-devel >= 1.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-
 %description
 EasyTAG is an utility for viewing, editing and writing tags of your
 MP3, MP2, FLAC and OGG files. Its simple and nice GTK+ interface makes
