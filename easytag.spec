@@ -2,7 +2,7 @@ Summary:	Tag editor for MP3 and OGG files
 Summary(pl):	Edytor etykiet plików MP3 i OGG
 Name:		easytag
 Version:	0.26
-Release:	0.1
+Release:	1
 License:	GPL
 Vendor:		Jerome Couderc <j.couderc@ifrance.com>
 Group:		X11/Applications
@@ -16,7 +16,7 @@ BuildRequires:	automake
 BuildRequires:	flac-devel
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+-devel      >= 1.2.7
-BuildRequires:	id3lib-devel    >= 3.7.13
+BuildRequires:	id3lib-devel    >= 3.8.2
 BuildRequires:	libogg-devel    >= 1.0
 BuildRequires:	libvorbis-devel >= 1.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -104,3 +104,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_applnkdir}/Multimedia/easytag.desktop
 %{_pixmapsdir}/*
 %{_datadir}/easytag
+%{_mandir}/man1/*.1*
