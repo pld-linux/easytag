@@ -1,13 +1,13 @@
 Summary:	ID3 tag editor
 Summary(pl):	Edytor etykiet ID3
 Name:		easytag
-Version:	1.99.2
-Release:	2
+Version:	1.99.3
+Release:	1
 Epoch:		1
-License:	GPL v2
+License:	GPL v2+
 Group:		X11/Applications/Sound
 Source0:	http://dl.sourceforge.net/easytag/%{name}-%{version}.tar.bz2
-# Source0-md5:	f5452c6ce7752dc2ebd9a984bc038a9d
+# Source0-md5:	36d30ccc8e5957e78c973660aacc2e4a
 Patch0:		%{name}-desktop.patch
 URL:		http://easytag.sourceforge.net/
 BuildRequires:	automake
@@ -92,7 +92,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog README TODO THANKS USERS-GUIDE
 %attr(755,root,root) %{_bindir}/*
-%{_datadir}/easytag
+%{_datadir}/%{name}
 %{_desktopdir}/*.desktop
 %{_mandir}/man1/*.1*
 %{_pixmapsdir}/*
