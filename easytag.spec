@@ -1,22 +1,12 @@
-Summary:	Tag editor for MP3 and OGG files
-Summary(pl):	Edytor etykiet plików MP3 i OGG
+Summary:	ID3 tag editor
+Summary(pl):	Edytor etykiet ID3
 Name:		easytag
-Version:	0.30
-Release:	3
-License:	GPL
-Vendor:		Jerome Couderc <j.couderc@ifrance.com>
-Group:		X11/Applications
+Version:	0.31
+Release:	1
+License:	GPL v2
+Group:		X11/Applications/Sound
 Source0:	http://dl.sourceforge.net/easytag/%{name}-%{version}.tar.bz2
-# Source0-md5:	9f0dfde219c0422676f21afc49cc44bf
-Patch0:		%{name}-no_inclusion_patch_in_configurein.patch
-Patch1:		%{name}-desktop.patch
-Patch2:		%{name}-ac_fix.patch
-Patch3:		%{name}-errno.patch
-# Patches *only* for version 0.30
-Patch4:		%{name}-0.30a.patch
-Patch5:		%{name}-0.30b.patch
-Patch6:		%{name}-0.30c.patch
-Patch7:		%{name}-0.30d.patch
+# Source0-md5:	9cfb29a81f251891ec4dbae4cd39821d
 URL:		http://easytag.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -30,12 +20,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 EasyTAG is an utility for viewing, editing and writing tags of your
-MP3, MP2, FLAC and OGG files. Its simple and nice GTK+ interface makes
-tagging easier.
+MP3, MP2, FLAC, OGG, MusePack and Monkey's Audio files. Its simple
+and nice GTK+ interface makes tagging easier.
 
 Features:
   - View, edit, write tags of MP3, MP2, FLAC files (supporting ID3v2 and
-    ID3v1.x specifications) and OGG files,
+    ID3v1.x specifications), OGG files, MusePack and Monkey's Audio
   - Auto tagging: parse filename and directory to complete automatically
     the fields (using masks),
   - Ability to rename files from the tag (using masks) or by loading a
@@ -53,12 +43,13 @@ Features:
 
 %description -l pl
 EasyTAG to narzêdzie do przegl±dania, modyfikownia i zapisywania
-etykiet (tagów) w plikach MP3, MP2, FLAC i OGG. Prosty i mi³y
-interfejs GTK+ u³atwia to zadanie.
+etykiet (tagów) w plikach MP3, MP2, FLAC, OGG, MusePack i Monkey's
+Audio. Prosty i mi³y interfejs GTK+ u³atwia to zadanie.
 
 Mo¿liwo¶ci:
  - przegl±danie, modyfikowanie, zapisywanie etykiet w plikach MP3,
-   MP2, FLAC (z obs³ug± formatów ID3v2 i ID3v1.x) i OGG
+   MP2, FLAC (z obs³ug± formatów ID3v2 i ID3v1.x), OGG, MusePack
+   i Monkey's Audio
  - automatyczne etykietowanie: tworzenie pól na podstawie nazwy pliku
    i katalogu (przy u¿yciu masek)
  - mo¿liwo¶æ zmiany nazw plików na podstawie etykiet (przy u¿yciu
@@ -77,21 +68,13 @@ Mo¿liwo¶ci:
 
 %prep
 %setup -q
-#%patch0 -p1
-%patch1 -p1
-#%patch2 -p0
-%patch3 -p1
-%patch4 -p1
-%patch5 -p1
-%patch6 -p1
-%patch7 -p1
 
 %build
-rm -f missing
 %{__gettextize}
-%{__autoheader}
+%{__libtoolize}
 %{__aclocal}
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 %configure
 %{__make}
@@ -99,10 +82,9 @@ rm -f missing
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	gnome_menudir=%{_applnkdir}/Multimedia
+	DESTDIR=$RPM_BUILD_ROOT
 
-%find_lang %{name}
+%find_lang %{name} --all-name
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -110,8 +92,8 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc ChangeLog README TODO THANKS USERS-GUIDE
-%attr(755,root,root) %{_bindir}/easytag
-%{_applnkdir}/Multimedia/easytag.desktop
-%{_pixmapsdir}/*
+%attr(755,root,root) %{_bindir}/*
 %{_datadir}/easytag
+%{_desktopdir}/*.desktop
 %{_mandir}/man1/*.1*
+%{_pixmapsdir}/*
