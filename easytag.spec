@@ -46,7 +46,7 @@ Features:
   - A file searching window.
 
 %description -l pl
-EasyTAG to narzêdzie do przegl±dania, modyfikownia i zapisywania
+EasyTAG to narzêdzie do przegl±dania, modyfikowania i zapisywania
 etykiet (tagów) w plikach MP3, MP2, FLAC, OGG, MusePack i Monkey's
 Audio. Prosty i mi³y interfejs GTK+ u³atwia to zadanie.
 
@@ -66,7 +66,7 @@ Mo¿liwo¶ci:
  - wczytywanie i wy¶wietlanie informacji z nag³ówka (czas, jako¶æ)
  - przegl±darka bazuj±ca na drzewie
  - lista z wyborem plików
- - prosty inferfejs
+ - prosty interfejs
  - generowanie playlist
  - wyszukiwanie plików.
 
