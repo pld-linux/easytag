@@ -1,9 +1,10 @@
 --- easytag-1.0/easytag.desktop.orig	2004-06-10 23:48:04.000000000 +0200
 +++ easytag-1.0/easytag.desktop	2004-11-11 14:56:20.125162088 +0100
-@@ -20,4 +20,5 @@
+@@ -20,6 +20,6 @@
  Terminal=false
  Type=Application
  Encoding=UTF-8
--Categories=Application;AudioVideo;AudioVideoEditing;GTK;
+-Categories=Application;AudioVideo;AudioVideoEditing;
 +Categories=GTK;Audio;
-+MimeType=x-directory/normal;audio/x-mp3;application/ogg;
+ X-Desktop-File-Install-Version=0.3
+ MimeType=x-directory/normal;audio/x-mp3;application/ogg;
