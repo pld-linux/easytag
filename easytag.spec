@@ -7,6 +7,7 @@ License:	GPL
 Vendor:		Jerome Couderc <j.couderc@ifrance.com>
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/easytag/%{name}-%{version}.tar.bz2
+# Source0-md5:	1f0460e9231dda2fe402be92224727aa
 Patch0:		%{name}-no_inclusion_patch_in_configurein.patch
 Patch1:		%{name}-desktop.patch
 Patch2:		%{name}-ac_fix.patch
