@@ -1,0 +1,11 @@
+diff -uNr easytag-0.27.orig/src/about.c easytag-0.27/src/about.c
+--- easytag-0.27.orig/src/about.c	Wed Jan 29 18:49:06 2003
++++ easytag-0.27/src/about.c	Fri Apr  4 14:16:29 2003
+@@ -21,6 +21,7 @@
+ 
+ #include <gtk/gtk.h>
+ #include <gdk/gdkkeysyms.h>
++#include <errno.h>
+ #include <stdio.h>
+ #include <string.h>
+ #include <id3.h>

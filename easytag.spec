@@ -10,6 +10,7 @@ Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/easytag/%{name}-%{version}.ta
 Patch0:		%{name}-no_inclusion_patch_in_configurein.patch
 Patch1:		%{name}-desktop.patch
 Patch2:		%{name}-ac_fix.patch
+Patch3:		%{name}-errno.patch
 URL:		http://easytag.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -74,6 +75,7 @@ Mo¿liwo¶ci:
 #%patch0 -p1
 %patch1 -p1
 #%patch2 -p0
+%patch3 -p1
 
 %build
 rm -f missing
