@@ -5,7 +5,7 @@ Release:	1
 License:	GPL
 URL:		http://easytag.sourceforge.net/
 Group:		Applications/Multimedia
-Source0:	http://prdownloads.sourceforge.net/easytag/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/easytag/%{name}-%{version}.tar.gz
 Patch0:		%{name}-ac.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Vendor:		Jerome Couderc <j.couderc@ifrance.com>
