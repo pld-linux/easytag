@@ -73,7 +73,7 @@ Mo¿liwo¶ci:
 %prep
 %setup -q
 #%patch0 -p1
-%patch1 -p0
+%patch1 -p1
 #%patch2 -p0
 %patch3 -p1
 
