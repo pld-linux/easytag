@@ -88,7 +88,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc ChangeLog INSTALL COPYING README TODO THANKS USERS-GUIDE
+%doc ChangeLog README TODO THANKS USERS-GUIDE
 %attr(755,root,root) %{_bindir}/easytag
 %{_applnkdir}/Multimedia/easytag.desktop
 %{_pixmapsdir}/*
