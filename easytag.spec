@@ -4,7 +4,7 @@ Version:	0.20
 Release:	1
 License:	GPL
 URL:		http://easytag.sourceforge.net/
-Group:		Applications/Multimedia
+Group:		X11/Applications
 Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/easytag/%{name}-%{version}.tar.gz
 Patch0:		%{name}-ac.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
