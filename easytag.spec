@@ -6,7 +6,7 @@ Release:	1
 License:	GPL v2
 Group:		X11/Applications/Sound
 Source0:	http://dl.sourceforge.net/easytag/%{name}-%{version}.tar.bz2
-# Source0-md5:	9f0dfde219c0422676f21afc49cc44bf
+# Source0-md5:	d79fbdfd480246b021107c5ee5d7370f
 Patch0:		%{name}-desktop.patch
 URL:		http://easytag.sourceforge.net/
 BuildRequires:	autoconf
