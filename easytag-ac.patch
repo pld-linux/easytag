@@ -1,0 +1,36 @@
+diff -Nur easytag-0.20/configure.in easytag-0.20.new/configure.in
+--- easytag-0.20/configure.in	Fri May 10 12:28:42 2002
++++ easytag-0.20.new/configure.in	Thu May 23 10:07:40 2002
+@@ -75,20 +75,20 @@
+ ID3LIB_MINOR=8
+ ID3LIB_PATCH=0
+ 
+-AC_MSG_CHECKING(for id3lib version)
+-      AC_TRY_RUN([
++#AC_MSG_CHECKING(for id3lib version)
++#      AC_TRY_RUN([
+ #include <id3.h>
+ #include <stdio.h>
+-int 
+-main ()
+-{
+-    FILE *output;
+-    output=fopen("conftest.id3","w");
+-    fprintf(output,"ID3LIB_MAJOR=%d\nID3LIB_MINOR=%d\nID3LIB_PATCH=%d\n",ID3LIB_MAJOR_VERSION,ID3LIB_MINOR_VERSION,ID3LIB_PATCH_VERSION);
+-    fclose(output);
+-    exit(0);
+-}
+-], . conftest.id3; echo "${ID3LIB_MAJOR}.${ID3LIB_MINOR}.${ID3LIB_PATCH}", AC_MSG_WARN(could not determine id3lib version),[echo $ac_n "cross compiling; assuming ${ID3LIB_MAJOR}.${ID3LIB_MINOR}.${ID3LIB_PATCH} $ac_c"])
++#int 
++#main ()
++#{
++#    FILE *output;
++#    output=fopen("conftest.id3","w");
++#    fprintf(output,"ID3LIB_MAJOR=%d\nID3LIB_MINOR=%d\nID3LIB_PATCH=%d\n",ID3LIB_MAJOR_VERSION,ID3LIB_MINOR_VERSION,ID3LIB_PATCH_VERSION);
++#    fclose(output);
++#    exit(0);
++#}
++#], . conftest.id3; echo "${ID3LIB_MAJOR}.${ID3LIB_MINOR}.${ID3LIB_PATCH}", AC_MSG_WARN(could not determine id3lib version),[echo $ac_n "cross compiling; assuming ${ID3LIB_MAJOR}.${ID3LIB_MINOR}.${ID3LIB_PATCH} $ac_c"])
+ AC_DEFINE_UNQUOTED(ID3LIB_MAJOR, $ID3LIB_MAJOR)
+ AC_DEFINE_UNQUOTED(ID3LIB_MINOR, $ID3LIB_MINOR)
+ AC_DEFINE_UNQUOTED(ID3LIB_PATCH, $ID3LIB_PATCH)
