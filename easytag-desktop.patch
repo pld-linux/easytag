@@ -5,5 +5,5 @@
  Type=Application
  Encoding=UTF-8
 -Categories=Application;AudioVideo;AudioVideoEditing;GTK;
-+Categories=GTK;AudioVideo;AudioVideoEditing;
++Categories=GTK;Audio;
 +MimeType=x-directory/normal;audio/x-mp3;application/ogg;
