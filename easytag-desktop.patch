@@ -1,6 +1,6 @@
---- easytag.desktop~	Tue Jul 15 20:55:54 2003
-+++ easytag.desktop	Tue Jul 15 21:03:32 2003
-@@ -7,12 +7,14 @@
+--- easytag-0.30/easytag.desktop	2003-07-12 23:34:01.000000000 +0200
++++ easytag.desktop	2003-11-10 13:05:04.000000000 +0100
+@@ -7,13 +7,16 @@
  Name[ja]=EasyTAG
  Name[da]=EasyTAG
  Name[nl]=EasyTAG
@@ -16,3 +16,5 @@
  Exec=easytag
  Icon=EasyTAG.xpm
  Terminal=0
+ Type=Application
++Categories=GTK;Multimedia
