@@ -5,11 +5,12 @@ Summary:	ID3 tag editor
 Summary(pl):	Edytor etykiet ID3
 Name:		easytag
 Version:	0.31
-Release:	0.1
+Release:	1
 License:	GPL v2
 Group:		X11/Applications/Sound
 Source0:	http://dl.sourceforge.net/easytag/%{name}-%{version}.tar.bz2
 # Source0-md5:	9cfb29a81f251891ec4dbae4cd39821d
+Patch0:		%{name}-desktop.patch
 URL:		http://easytag.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -71,6 +72,7 @@ Mo¿liwo¶ci:
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__gettextize}
