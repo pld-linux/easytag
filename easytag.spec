@@ -9,6 +9,7 @@ Group:		X11/Applications
 Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/easytag/%{name}-%{version}.tar.gz
 Patch0:		%{name}-no_inclusion_patch_in_configurein.patch
 Patch1:		%{name}-desktop.patch
+Patch2:		%{name}-ac_fix.patch
 URL:		http://easytag.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -73,6 +74,7 @@ Mo¿liwo¶ci:
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p0
 
 %build
 rm -f missing
