@@ -1,0 +1,20 @@
+--- easytag-0.20/easytag.desktop.orig	Tue Oct 15 00:56:22 2002
++++ easytag-0.20/easytag.desktop	Tue Oct 15 01:12:12 2002
+@@ -6,12 +6,15 @@
+ Name[hu]=EasyTAG
+ Name[ja]=EasyTAG
+ Name[nl]=EasyTAG
++Name[pl]=EasyTAG
+ Name[ru]=EasyTAG
+ Name[sv]=EasyTAG
+ Comment=An utility for viewing/editing MP3 and OGG tags with a GTK+ GUI.
+-Comment[fr]=Un utilitaire pour visualiser et Èditer les tags des fichiers MP3 et OGG ‡ l'aide d'une interface GTK+.
+-Comment[ja]=GTK+ »« MP3/OGG •ø•∞§Œ…Ωº®/ ‘Ω∏•ƒ°º•Î
++Comment[fr]=Un utilitaire pour visualiser et √©diter les tags des fichiers MP3 et OGG √† l'aide d'une interface GTK+.
++Comment[ja]=GTK+ Áâà MP3/OGG „Çø„Ç∞„ÅÆË°®Á§∫/Á∑®ÈõÜ„ÉÑ„Éº„É´
++Comment[pl]=Oparty o GTK+ program do przeglƒÖdania/edycji MP3 oraz znacznik√≥w OGG.
+ Exec=easytag
+ Icon=EasyTAG.xpm
+ Terminal=0
+ Type=Application
++# vi: encoding=utf-8
