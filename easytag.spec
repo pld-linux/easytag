@@ -79,12 +79,6 @@ Mo¿liwo¶ci:
 #%patch0 -p1
 
 %build
-#%{__gettextize}
-#%{__libtoolize}
-#%{__aclocal}
-#%{__autoconf}
-#%{__autoheader}
-#%{__automake}
 %configure
 %{__make}
 
