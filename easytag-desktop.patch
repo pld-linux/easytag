@@ -5,6 +5,6 @@
  Type=Application
  Encoding=UTF-8
 -Categories=Application;AudioVideo;AudioVideoEditing;
-+Categories=GTK;Audio;AudioVideoEditing;
++Categories=Audio;AudioVideoEditing;
  X-Desktop-File-Install-Version=0.3
  MimeType=x-directory/normal;audio/x-mp3;application/ogg;
