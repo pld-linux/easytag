@@ -1,13 +1,8 @@
-# TODO:
-#	fix desktop file encoding and Categories
-#
-%define		_pre pre3
-
 Summary:	ID3 tag editor
 Summary(pl):	Edytor etykiet ID3
 Name:		easytag
 Version:	1.99.1
-Release:	0.1
+Release:	1
 Epoch:		1
 License:	GPL v2
 Group:		X11/Applications/Sound
@@ -78,7 +73,7 @@ Mo¿liwo¶ci:
 
 %prep
 %setup -q
-#%patch0 -p1
+%patch0 -p1
 
 %build
 %configure
