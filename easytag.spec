@@ -19,6 +19,7 @@ BuildRequires:	gettext-devel
 BuildRequires:	gtk+-devel      >= 1.2.7
 BuildRequires:	id3lib-devel    >= 3.8.2
 BuildRequires:	libogg-devel    >= 1.0
+BuildRequires:	libtool
 BuildRequires:	libvorbis-devel >= 1.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
