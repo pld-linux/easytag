@@ -8,6 +8,9 @@ Vendor:		Jerome Couderc <j.couderc@ifrance.com>
 Group:		X11/Applications
 Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/easytag/%{name}-%{version}.tar.gz
 URL:		http://easytag.sourceforge.net/
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	gettext-devel
 BuildRequires:	gtk+-devel      >= 1.2.7
 BuildRequires:	id3lib-devel    >= 3.7.13
 BuildRequires:	libogg-devel    >= 1.0
@@ -69,7 +72,7 @@ Mo¿liwo¶ci:
 %build
 %{__gettextize}
 autoheader
-aclocal
+%{__aclocal}
 %{__autoconf}
 %{__automake}
 %configure
