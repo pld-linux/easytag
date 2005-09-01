@@ -17,6 +17,7 @@ BuildRequires:	gtk+2-devel >= 2:2.4.0
 BuildRequires:	id3lib-devel >= 3.8.3
 BuildRequires:	libogg-devel >= 2:1.0
 BuildRequires:	libvorbis-devel >= 1:1.0
+BuildRequires:	mpeg4ip-devel >= 1.3
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
