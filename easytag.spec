@@ -1,5 +1,5 @@
 Summary:	ID3 tag editor
-Summary(pl):	Edytor etykiet ID3
+Summary(pl.UTF-8):   Edytor etykiet ID3
 Name:		easytag
 Version:	1.99.13
 Release:	1
@@ -44,30 +44,30 @@ Features:
 - A playlist generator window,
 - A file searching window.
 
-%description -l pl
-EasyTAG to narzêdzie do przegl±dania, modyfikowania i zapisywania
-etykiet (tagów) w plikach MP3, MP2, FLAC, Ogg, MusePack i Monkey's
-Audio. Prosty i mi³y interfejs GTK+2 u³atwia to zadanie.
+%description -l pl.UTF-8
+EasyTAG to narzÄ™dzie do przeglÄ…dania, modyfikowania i zapisywania
+etykiet (tagÃ³w) w plikach MP3, MP2, FLAC, Ogg, MusePack i Monkey's
+Audio. Prosty i miÅ‚y interfejs GTK+2 uÅ‚atwia to zadanie.
 
-Mo¿liwo¶ci:
-- przegl±danie, modyfikowanie, zapisywanie etykiet w plikach MP3,
-  MP2, FLAC (z obs³ug± formatów ID3v2 i ID3v1.x), Ogg, MusePack
+MoÅ¼liwoÅ›ci:
+- przeglÄ…danie, modyfikowanie, zapisywanie etykiet w plikach MP3,
+  MP2, FLAC (z obsÅ‚ugÄ… formatÃ³w ID3v2 i ID3v1.x), Ogg, MusePack
   i Monkey's Audio,
-- automatyczne etykietowanie: tworzenie pól na podstawie nazwy pliku
-  i katalogu (przy u¿yciu masek),
-- mo¿liwo¶æ zmiany nazw plików na podstawie etykiet (przy u¿yciu
-  masek) lub wczytuj±c je z pliku tekstowego
-- obróbka wszystkich plików w podanym katalogu,
-- mo¿liwo¶æ przegl±dania podkatalogów,
+- automatyczne etykietowanie: tworzenie pÃ³l na podstawie nazwy pliku
+  i katalogu (przy uÅ¼yciu masek),
+- moÅ¼liwoÅ›Ä‡ zmiany nazw plikÃ³w na podstawie etykiet (przy uÅ¼yciu
+  masek) lub wczytujÄ…c je z pliku tekstowego
+- obrÃ³bka wszystkich plikÃ³w w podanym katalogu,
+- moÅ¼liwoÅ›Ä‡ przeglÄ…dania podkatalogÃ³w,
 - rekurencja przy etykietowaniu, usuwaniu, zmianie nazw, zapisywaniu
-- mo¿liwo¶æ ustawienia pola (wykonawca, tytu³...) we wszystkich
-  pozosta³ych plikach,
-- wczytywanie i wy¶wietlanie informacji z nag³ówka (czas, jako¶æ),
-- przegl±darka bazuj±ca na drzewie,
-- lista z wyborem plików,
+- moÅ¼liwoÅ›Ä‡ ustawienia pola (wykonawca, tytuÅ‚...) we wszystkich
+  pozostaÅ‚ych plikach,
+- wczytywanie i wyÅ›wietlanie informacji z nagÅ‚Ã³wka (czas, jakoÅ›Ä‡),
+- przeglÄ…darka bazujÄ…ca na drzewie,
+- lista z wyborem plikÃ³w,
 - prosty interfejs,
 - generowanie playlist,
-- wyszukiwanie plików.
+- wyszukiwanie plikÃ³w.
 
 %prep
 %setup -q
