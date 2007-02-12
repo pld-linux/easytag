@@ -1,5 +1,5 @@
 Summary:	ID3 tag editor
-Summary(pl.UTF-8):   Edytor etykiet ID3
+Summary(pl.UTF-8):	Edytor etykiet ID3
 Name:		easytag
 Version:	1.99.13
 Release:	1
