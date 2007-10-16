@@ -1,10 +1,18 @@
---- easytag-1.0/easytag.desktop.orig	2004-06-10 23:48:04.000000000 +0200
-+++ easytag-1.0/easytag.desktop	2004-11-11 14:56:20.125162088 +0100
-@@ -20,6 +20,6 @@
+--- easytag-2.1/easytag.desktop	2007-10-16 16:36:17.000000000 +0000
++++ easytag-2.1/easytag.desktop	2007-10-16 16:36:23.000000000 +0000
+@@ -1,5 +1,7 @@
+ [Desktop Entry]
+ Name=EasyTAG
++GenericName=ID3 tag editor
++GenericName[pl]=Edytor etykiet ID3
+ Comment=EasyTAG is an utility for viewing and editing tags for MP3, MP2, FLAC, Ogg Vorbis, MusePack and Monkey's Audio files, with a GTK+ GUI.
+ Comment[cs]=EasyTAG je utilita na prohlížení, editaci a zápis tagů do vašich MP3, MP2, FLAC, Ogg Vorbis, MusePack a Monkey Audio souborů.
+ Comment[da]=Et program til at vise/redigere MP3 og Ogg Vorbis tags med et GTK+ interface.
+@@ -20,6 +22,6 @@
  Terminal=false
  Type=Application
  Encoding=UTF-8
 -Categories=Application;AudioVideo;AudioVideoEditing;
 +Categories=GTK;Audio;
  X-Desktop-File-Install-Version=0.3
- MimeType=x-directory/normal;audio/x-mp3;application/ogg;
+ MimeType=audio/x-mp3;application/ogg;
