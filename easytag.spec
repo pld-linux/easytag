@@ -1,15 +1,14 @@
 Summary:	ID3 tag editor
 Summary(pl.UTF-8):	Edytor etykiet ID3
 Name:		easytag
-Version:	2.1.3
+Version:	2.1
 Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Applications/Sound
 Source0:	http://heanet.dl.sourceforge.net/easytag/%{name}-%{version}.tar.bz2
-# Source0-md5:	ed5ebd51116e257dab161b8919cb6b58
+# Source0-md5:	a585cb9e400ba460ec1801856ea5e90f
 Patch0:		%{name}-desktop.patch
-Patch1:		%{name}-mpeg4ip.patch
 URL:		http://easytag.sourceforge.net/
 BuildRequires:	automake
 BuildRequires:	flac-devel >= 1.1.0
@@ -18,7 +17,7 @@ BuildRequires:	gtk+2-devel >= 2:2.4.0
 BuildRequires:	id3lib-devel >= 3.8.3
 BuildRequires:	libogg-devel >= 2:1.0
 BuildRequires:	libvorbis-devel >= 1:1.0
-BuildRequires:	mpeg4ip-devel >= 1:1.6
+BuildRequires:	mpeg4ip-devel >= 1:1.3
 BuildRequires:	pkgconfig
 Requires(post,postun):	desktop-file-utils
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -74,7 +73,6 @@ Możliwości:
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 cp -f /usr/share/automake/config.* .
