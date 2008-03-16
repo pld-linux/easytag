@@ -9,6 +9,7 @@ Group:		X11/Applications/Sound
 Source0:	http://heanet.dl.sourceforge.net/easytag/%{name}-%{version}.tar.bz2
 # Source0-md5:	201bd38a73100e14fb6d81243a9c3a1b
 Patch0:		%{name}-desktop.patch
+Patch1:		%{name}-fix_build.patch
 URL:		http://easytag.sourceforge.net/
 BuildRequires:	automake
 BuildRequires:	flac-devel >= 1.1.0
@@ -73,6 +74,7 @@ Możliwości:
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 cp -f /usr/share/automake/config.* .
