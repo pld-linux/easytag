@@ -1,0 +1,10 @@
+--- easytag-2.1.4.orig/src/mp4_tag.c	2008-03-16 03:46:03.396669152 +0100
++++ easytag-2.1.4/src/mp4_tag.c	2008-03-16 03:48:46.897818774 +0100
+@@ -187,6 +187,7 @@
+ #ifdef NEWMP4
+     // There version can handle multiple pictures!
+     // Version 1.6 of libmp4v2 introduces an index argument for MP4GetMetadataCoverart
++    int i;
+     for (i = 0; (MP4GetMetadataCoverArt( mp4file, &coverArt, &coverSize,i )); i++)
+ #else
+     // There version handle only one picture!
