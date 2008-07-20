@@ -21,6 +21,7 @@ BuildRequires:	libvorbis-devel >= 1:1.0
 BuildRequires:	mpeg4ip-devel >= 1:1.3
 BuildRequires:	pkgconfig
 BuildRequires:	speex-devel
+BuildRequires:	wavpack-devel >= 4.40
 Requires(post,postun):	desktop-file-utils
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
