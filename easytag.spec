@@ -1,4 +1,5 @@
 Summary:	ID3 tag editor
+Summary(hu.UTF-8):	ID3 tag szerkesztő
 Summary(pl.UTF-8):	Edytor etykiet ID3
 Name:		easytag
 Version:	2.1.6
@@ -27,8 +28,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 EasyTAG is an utility for viewing, editing and writing tags of your
-MP3, MP2, FLAC, Ogg, MusePack and Monkey's Audio files. Its simple
-and nice GTK+2 interface makes tagging easier.
+MP3, MP2, FLAC, Ogg, MusePack and Monkey's Audio files. Its simple and
+nice GTK+2 interface makes tagging easier.
 
 Features:
 - View, edit, write tags of MP3, MP2, FLAC files (supporting ID3v2 and
@@ -48,17 +49,40 @@ Features:
 - A playlist generator window,
 - A file searching window.
 
+%description -l hu.UTF-8
+EasyTag egy eszköz az MP3, MP2, FLAC, Ogg, MusePack és Monkey's Audio
+fájlok tagjeinek megtekintésére, szerkesztésére és írására. Egy
+egyszerű GTK+2 felület ezt meg is könnyíti.
+
+Lehetőségek:
+- MP3, MP2, FLAC (ID3v2 és ID3v1.x is), Ogg, MusePack és Monkey's
+  Audio fájlok tag-jeine megtekintése, szerkesztése és mentése
+- Automatikus tag-szerkesztés: fájlnév és könyvtár feldolgozása
+  alapján tölti ki a mezőket
+- Fájlok átnevezése a mezők alapján vagy egy betöltött txt-fájl
+  segítségével
+- A kijelölt könyvtár összes fájljának feldolgozása
+- Alkönyvtárak böngészése
+- Rekurzió gyakorlatilag mindenre
+- Összes fájlra mező beállítása (előadó, számcím)
+- Header információk olvasása (bitráta, hossz, ...) és megjelenítése
+- Fastruktúrás böngészés
+- Fájlok listájának kijelölése
+- Egyszerű és gyors felület
+- Lejátszási lista generálás
+- Fájlkeresés
+
 %description -l pl.UTF-8
 EasyTAG to narzędzie do przeglądania, modyfikowania i zapisywania
 etykiet (tagów) w plikach MP3, MP2, FLAC, Ogg, MusePack i Monkey's
 Audio. Prosty i miły interfejs GTK+2 ułatwia to zadanie.
 
 Możliwości:
-- przeglądanie, modyfikowanie, zapisywanie etykiet w plikach MP3,
-  MP2, FLAC (z obsługą formatów ID3v2 i ID3v1.x), Ogg, MusePack
-  i Monkey's Audio,
-- automatyczne etykietowanie: tworzenie pól na podstawie nazwy pliku
-  i katalogu (przy użyciu masek),
+- przeglądanie, modyfikowanie, zapisywanie etykiet w plikach MP3, MP2,
+  FLAC (z obsługą formatów ID3v2 i ID3v1.x), Ogg, MusePack i Monkey's
+  Audio,
+- automatyczne etykietowanie: tworzenie pól na podstawie nazwy pliku i
+  katalogu (przy użyciu masek),
 - możliwość zmiany nazw plików na podstawie etykiet (przy użyciu
   masek) lub wczytując je z pliku tekstowego
 - obróbka wszystkich plików w podanym katalogu,
