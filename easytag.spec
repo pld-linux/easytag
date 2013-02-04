@@ -7,7 +7,7 @@ Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Applications/Sound
-Source0:	http://download.sourceforge.net/easytag/%{name}-%{version}.tar.bz2
+Source0:	http://downloads.sourceforge.net/easytag/%{name}-%{version}.tar.bz2
 # Source0-md5:	9df3e800d80e754670642f2ba5e03539
 Patch0:		%{name}-desktop.patch
 URL:		http://easytag.sourceforge.net/
