@@ -8,11 +8,10 @@
  Comment=EasyTAG is an utility for viewing and editing tags for MP3, MP2, FLAC, Ogg Vorbis, MusePack and Monkey's Audio files, with a GTK+ GUI.
  Comment[cs]=EasyTAG je utilita na prohlížení, editaci a zápis tagů do vašich MP3, MP2, FLAC, Ogg Vorbis, MusePack a Monkey Audio souborů.
  Comment[da]=Et program til at vise/redigere MP3 og Ogg Vorbis tags med et GTK+ interface.
-@@ -20,6 +22,6 @@
+@@ -20,5 +22,5 @@
  Icon=EasyTAG_icon
  Terminal=false
  Type=Application
 -Categories=AudioVideo;AudioVideoEditing;GTK;
 +Categories=AudioVideo;AudioVideoEditing;GTK;Audio;
- X-Desktop-File-Install-Version=0.14
- MimeType=audio/x-mp3;application/ogg;x-directory/normal;
+ MimeType=audio/x-mp3;application/ogg;
