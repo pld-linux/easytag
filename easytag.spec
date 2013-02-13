@@ -1,9 +1,13 @@
+# TODO: port to standalone mp4v2
+
+%bcond_with	mp4v2		# build with mp4v2 support
+
 Summary:	ID3 tag editor
 Summary(hu.UTF-8):	ID3 tag szerkesztő
 Summary(pl.UTF-8):	Edytor etykiet ID3
 Name:		easytag
 Version:	2.1.7
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Applications/Sound
@@ -19,7 +23,7 @@ BuildRequires:	id3lib-devel >= 3.8.3
 BuildRequires:	libid3tag-devel
 BuildRequires:	libogg-devel >= 2:1.0
 BuildRequires:	libvorbis-devel >= 1:1.0
-BuildRequires:	mpeg4ip-devel >= 1:1.3
+%{?with_mp4v2:BuildRequires:	mp4v2-devel}
 BuildRequires:	pkgconfig
 BuildRequires:	speex-devel
 BuildRequires:	wavpack-devel >= 4.40
@@ -103,7 +107,9 @@ Możliwości:
 
 %build
 cp -f /usr/share/automake/config.* .
-%configure
+%configure \
+	%{!?with_mp4v2:--disable-mp4}
+
 %{__make}
 
 %install
