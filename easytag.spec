@@ -1,33 +1,41 @@
-# TODO: port to standalone mp4v2
-
-%bcond_with	mp4v2		# build with mp4v2 support
-
 Summary:	ID3 tag editor
 Summary(hu.UTF-8):	ID3 tag szerkesztő
 Summary(pl.UTF-8):	Edytor etykiet ID3
 Name:		easytag
-Version:	2.1.7
-Release:	2
+Version:	2.2.0
+Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Applications/Sound
-Source0:	http://downloads.sourceforge.net/easytag/%{name}-%{version}.tar.bz2
-# Source0-md5:	9df3e800d80e754670642f2ba5e03539
-Patch0:		%{name}-desktop.patch
-URL:		http://easytag.sourceforge.net/
-BuildRequires:	automake
-BuildRequires:	flac-devel >= 1.1.0
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/easytag/2.2/%{name}-%{version}.tar.xz
+# Source0-md5:	3c0961b754b037514bf7383ad01beaf3
+URL:		https://wiki.gnome.org/Apps/EasyTAG
+BuildRequires:	appdata-tools
+BuildRequires:	autoconf >= 2.64
+BuildRequires:	automake >= 1:1.11
+BuildRequires:	flac-devel >= 1.1.4
 BuildRequires:	gettext-devel
-BuildRequires:	gtk+2-devel >= 2:2.4.0
+BuildRequires:	glib2-devel >= 1:2.32.0
+BuildRequires:	gtk+3-devel >= 3.2.1
 BuildRequires:	id3lib-devel >= 3.8.3
+BuildRequires:	intltool >= 0.50.0
 BuildRequires:	libid3tag-devel
 BuildRequires:	libogg-devel >= 2:1.0
-BuildRequires:	libvorbis-devel >= 1:1.0
-%{?with_mp4v2:BuildRequires:	mp4v2-devel}
-BuildRequires:	pkgconfig
+BuildRequires:	libvorbis-devel >= 1:1.0.1
+BuildRequires:	opus-devel >= 1.0
+BuildRequires:	opusfile-devel
+BuildRequires:	pkgconfig >= 1:0.24
+BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	speex-devel
+BuildRequires:	taglib-devel >= 1.9.1
 BuildRequires:	wavpack-devel >= 4.40
+BuildRequires:	yelp-tools
 Requires(post,postun):	desktop-file-utils
+Requires(post,postun):	gtk-update-icon-cache
+Requires:	glib2 >= 1:2.32.0
+Requires:	gtk+3 >= 3.2.1
+Requires:	hicolor-icon-theme
+Requires:	taglib >= 1.9.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -103,13 +111,15 @@ Możliwości:
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
-cp -f /usr/share/automake/config.* .
+%{__intltoolize}
+%{__aclocal} -I m4
+%{__autoheader}
+%{__autoconf}
+%{__automake}
 %configure \
-	%{!?with_mp4v2:--disable-mp4}
-
+	--disable-silent-rules
 %{__make}
 
 %install
@@ -118,22 +128,25 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%find_lang %{name} --all-name
+%find_lang %{name} --with-gnome
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %post
 %update_desktop_database_post
+%update_icon_cache hicolor
 
 %postun
 %update_desktop_database_postun
+%update_icon_cache hicolor
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc ChangeLog README TODO THANKS USERS-GUIDE
-%attr(755,root,root) %{_bindir}/*
-%{_datadir}/%{name}
-%{_desktopdir}/*.desktop
-%{_mandir}/man1/*.1*
-%{_pixmapsdir}/*
+%doc AUTHORS ChangeLog HACKING NEWS README THANKS TODO
+%attr(755,root,root) %{_bindir}/easytag
+%{_datadir}/appdata/easytag.appdata.xml
+%{_desktopdir}/easytag.desktop
+%{_mandir}/man1/easytag.1*
+%{_iconsdir}/hicolor/*/*/*.png
+%{_iconsdir}/hicolor/*/*/*.svg
