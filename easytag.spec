@@ -2,13 +2,13 @@ Summary:	ID3 tag editor
 Summary(hu.UTF-8):	ID3 tag szerkesztő
 Summary(pl.UTF-8):	Edytor etykiet ID3
 Name:		easytag
-Version:	2.2.0
+Version:	2.2.1
 Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Applications/Sound
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/easytag/2.2/%{name}-%{version}.tar.xz
-# Source0-md5:	3c0961b754b037514bf7383ad01beaf3
+# Source0-md5:	3229272b5e48862155f756cb30556114
 URL:		https://wiki.gnome.org/Apps/EasyTAG
 BuildRequires:	appdata-tools
 BuildRequires:	autoconf >= 2.64
