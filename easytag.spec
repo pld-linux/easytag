@@ -2,17 +2,19 @@ Summary:	ID3 tag editor
 Summary(hu.UTF-8):	ID3 tag szerkesztő
 Summary(pl.UTF-8):	Edytor etykiet ID3
 Name:		easytag
-Version:	2.2.1
+Version:	2.2.3
 Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Applications/Sound
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/easytag/2.2/%{name}-%{version}.tar.xz
-# Source0-md5:	3229272b5e48862155f756cb30556114
+# Source0-md5:	017b507f6c9df6b88886dcceaac63a9c
 URL:		https://wiki.gnome.org/Apps/EasyTAG
 BuildRequires:	appdata-tools
 BuildRequires:	autoconf >= 2.64
 BuildRequires:	automake >= 1:1.11
+BuildRequires:	docbook-dtd44-xml
+BuildRequires:	docbook-style-xsl
 BuildRequires:	flac-devel >= 1.1.4
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.32.0
@@ -21,7 +23,9 @@ BuildRequires:	id3lib-devel >= 3.8.3
 BuildRequires:	intltool >= 0.50.0
 BuildRequires:	libid3tag-devel
 BuildRequires:	libogg-devel >= 2:1.0
+BuildRequires:	libstdc++-devel
 BuildRequires:	libvorbis-devel >= 1:1.0.1
+BuildRequires:	libxslt-progs
 BuildRequires:	opus-devel >= 1.0
 BuildRequires:	opusfile-devel
 BuildRequires:	pkgconfig >= 1:0.24
@@ -32,16 +36,21 @@ BuildRequires:	wavpack-devel >= 4.40
 BuildRequires:	yelp-tools
 Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	gtk-update-icon-cache
+Requires:	flac >= 1.1.4
 Requires:	glib2 >= 1:2.32.0
 Requires:	gtk+3 >= 3.2.1
 Requires:	hicolor-icon-theme
+Requires:	libogg >= 2:1.0
+Requires:	libvorbis >= 1:1.0.1
+Requires:	opus >= 1.0
 Requires:	taglib >= 1.9.1
+Requires:	wavpack >= 4.40
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 EasyTAG is an utility for viewing, editing and writing tags of your
 MP3, MP2, FLAC, Ogg, MusePack and Monkey's Audio files. Its simple and
-nice GTK+2 interface makes tagging easier.
+nice GTK+ interface makes tagging easier.
 
 Features:
 - View, edit, write tags of MP3, MP2, FLAC files (supporting ID3v2 and
@@ -64,7 +73,7 @@ Features:
 %description -l hu.UTF-8
 EasyTag egy eszköz az MP3, MP2, FLAC, Ogg, MusePack és Monkey's Audio
 fájlok tagjeinek megtekintésére, szerkesztésére és írására. Egy
-egyszerű GTK+2 felület ezt meg is könnyíti.
+egyszerű GTK+ felület ezt meg is könnyíti.
 
 Lehetőségek:
 - MP3, MP2, FLAC (ID3v2 és ID3v1.x is), Ogg, MusePack és Monkey's
@@ -87,7 +96,7 @@ Lehetőségek:
 %description -l pl.UTF-8
 EasyTAG to narzędzie do przeglądania, modyfikowania i zapisywania
 etykiet (tagów) w plikach MP3, MP2, FLAC, Ogg, MusePack i Monkey's
-Audio. Prosty i miły interfejs GTK+2 ułatwia to zadanie.
+Audio. Prosty i miły interfejs GTK+ ułatwia to zadanie.
 
 Możliwości:
 - przeglądanie, modyfikowanie, zapisywanie etykiet w plikach MP3, MP2,
