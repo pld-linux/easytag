@@ -16,7 +16,7 @@ BuildRequires:	automake >= 1:1.11
 BuildRequires:	docbook-dtd44-xml
 BuildRequires:	docbook-style-xsl
 BuildRequires:	flac-devel >= 1.1.4
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.32.0
 BuildRequires:	gtk+3-devel >= 3.2.1
 BuildRequires:	id3lib-devel >= 3.8.3
