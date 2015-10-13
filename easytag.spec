@@ -1,14 +1,18 @@
+#
+# Conditional build:
+%bcond_without	nautilus	# nautilus context menu actions module
+#
 Summary:	ID3 tag editor
 Summary(hu.UTF-8):	ID3 tag szerkesztő
 Summary(pl.UTF-8):	Edytor etykiet ID3
 Name:		easytag
-Version:	2.2.6
+Version:	2.4.0
 Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Applications/Sound
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/easytag/2.2/%{name}-%{version}.tar.xz
-# Source0-md5:	204b50cb46afa9b40f89774e8dda5f62
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/easytag/2.4/%{name}-%{version}.tar.xz
+# Source0-md5:	5951c735cc997ac3e3d2b7a29da6c413
 URL:		https://wiki.gnome.org/Apps/EasyTAG
 BuildRequires:	appdata-tools
 BuildRequires:	autoconf >= 2.64
@@ -16,16 +20,19 @@ BuildRequires:	automake >= 1:1.11
 BuildRequires:	docbook-dtd44-xml
 BuildRequires:	docbook-style-xsl
 BuildRequires:	flac-devel >= 1.1.4
+BuildRequires:	gdk-pixbuf2-devel
 BuildRequires:	gettext-tools
-BuildRequires:	glib2-devel >= 1:2.32.0
-BuildRequires:	gtk+3-devel >= 3.2.1
+BuildRequires:	glib2-devel >= 1:2.38.0
+BuildRequires:	gtk+3-devel >= 3.10.0
 BuildRequires:	id3lib-devel >= 3.8.3
 BuildRequires:	intltool >= 0.50.0
 BuildRequires:	libid3tag-devel
 BuildRequires:	libogg-devel >= 2:1.0
 BuildRequires:	libstdc++-devel
+BuildRequires:	libtool >= 2:2.2
 BuildRequires:	libvorbis-devel >= 1:1.0.1
 BuildRequires:	libxslt-progs
+%{?with_nautilus:BuildRequires:	nautilus-devel >= 3.0}
 BuildRequires:	opus-devel >= 1.0
 BuildRequires:	opusfile-devel
 BuildRequires:	pkgconfig >= 1:0.24
@@ -37,8 +44,8 @@ BuildRequires:	yelp-tools
 Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	gtk-update-icon-cache
 Requires:	flac >= 1.1.4
-Requires:	glib2 >= 1:2.32.0
-Requires:	gtk+3 >= 3.2.1
+Requires:	glib2 >= 1:2.38.0
+Requires:	gtk+3 >= 3.10.0
 Requires:	hicolor-icon-theme
 Requires:	libogg >= 2:1.0
 Requires:	libvorbis >= 1:1.0.1
@@ -118,16 +125,33 @@ Możliwości:
 - generowanie playlist,
 - wyszukiwanie plików.
 
+%package -n nautilus-extension-easytag
+Summary:	Nautilus extension to open files with EasyTAG
+Summary(pl.UTF-8):	Rozszerzenie Nautilusa do otwierania plików w programie EasyTAG
+Group:		X11/Applications
+Requires:	%{name} = %{version}-%{release}
+Requires:	nautilus >= 3.0.0
+
+%description -n nautilus-extension-easytag
+Nautilus extension to open directories and audio files with EasyTAG
+using the context menu.
+
+%description -n nautilus-extension-easytag -l pl.UTF-8
+Rozszerzenie Nautilusa do otwierania katalogów i plików dźwiękowych w
+programie EasyTAG przy użyciu menu kontekstowego.
+
 %prep
 %setup -q
 
 %build
 %{__intltoolize}
+%{__libtoolize}
 %{__aclocal} -I m4
 %{__autoheader}
 %{__autoconf}
 %{__automake}
 %configure \
+	%{!?with_nautilus:--disable-nautilus-actions} \
 	--disable-silent-rules
 %{__make}
 
@@ -136,6 +160,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+%if %{with nautilus}
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/nautilus/extensions-3.0/libnautilus-easytag.la
+%else
+%{__rm} $RPM_BUILD_ROOT%{_datadir}/appdata/easytag-nautilus.metainfo.xml
+%endif
 
 %find_lang %{name} --with-gnome
 
@@ -155,7 +185,17 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog HACKING NEWS README THANKS TODO
 %attr(755,root,root) %{_bindir}/easytag
 %{_datadir}/appdata/easytag.appdata.xml
+%{_datadir}/glib-2.0/schemas/org.gnome.EasyTAG.enums.xml
+%{_datadir}/glib-2.0/schemas/org.gnome.EasyTAG.gschema.xml
 %{_desktopdir}/easytag.desktop
 %{_mandir}/man1/easytag.1*
-%{_iconsdir}/hicolor/*/*/*.png
-%{_iconsdir}/hicolor/*/*/*.svg
+%{_iconsdir}/hicolor/*x*/apps/easytag.png
+%{_iconsdir}/hicolor/scalable/apps/easytag.svg
+%{_iconsdir}/hicolor/symbolic/apps/easytag-symbolic.svg
+
+%if %{with nautilus}
+%files -n nautilus-extension-easytag
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/nautilus/extensions-3.0/libnautilus-easytag.so
+%{_datadir}/appdata/easytag-nautilus.metainfo.xml
+%endif
