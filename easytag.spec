@@ -7,7 +7,7 @@ Summary(hu.UTF-8):	ID3 tag szerkesztő
 Summary(pl.UTF-8):	Edytor etykiet ID3
 Name:		easytag
 Version:	2.4.0
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Applications/Sound
@@ -129,7 +129,7 @@ Możliwości:
 Summary:	Nautilus extension to open files with EasyTAG
 Summary(pl.UTF-8):	Rozszerzenie Nautilusa do otwierania plików w programie EasyTAG
 Group:		X11/Applications
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	nautilus >= 3.0.0
 
 %description -n nautilus-extension-easytag
