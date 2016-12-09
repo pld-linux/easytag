@@ -7,7 +7,7 @@ Summary(hu.UTF-8):	ID3 tag szerkesztő
 Summary(pl.UTF-8):	Edytor etykiet ID3
 Name:		easytag
 Version:	2.4.2
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Applications/Sound
@@ -42,6 +42,7 @@ BuildRequires:	taglib-devel >= 1.9.1
 BuildRequires:	wavpack-devel >= 4.40
 BuildRequires:	yelp-tools
 Requires(post,postun):	desktop-file-utils
+Requires(post,postun):	glib2 >= 1:2.38.0
 Requires(post,postun):	gtk-update-icon-cache
 Requires:	flac >= 1.1.4
 Requires:	glib2 >= 1:2.38.0
@@ -152,6 +153,7 @@ programie EasyTAG przy użyciu menu kontekstowego.
 %{__automake}
 %configure \
 	%{!?with_nautilus:--disable-nautilus-actions} \
+	--disable-schemas-compile \
 	--disable-silent-rules
 %{__make}
 
@@ -173,8 +175,10 @@ rm -rf $RPM_BUILD_ROOT
 %post
 %update_desktop_database_post
 %update_icon_cache hicolor
+%glib_compile_schemas
 
 %postun
+%glib_compile_schemas
 %update_desktop_database_postun
 %update_icon_cache hicolor
 
