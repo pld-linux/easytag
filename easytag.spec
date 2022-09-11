@@ -15,6 +15,7 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/easytag/2.4/%{name}-%{version}.t
 # Source0-md5:	4c3ffa3b957a1f50799f1c8bfb620233
 URL:		https://wiki.gnome.org/Apps/EasyTAG
 BuildRequires:	appdata-tools
+BuildRequires:	appstream-glib
 BuildRequires:	autoconf >= 2.64
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	docbook-dtd44-xml
