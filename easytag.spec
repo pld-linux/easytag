@@ -15,7 +15,7 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/easytag/2.4/%{name}-%{version}.t
 # Source0-md5:	4c3ffa3b957a1f50799f1c8bfb620233
 URL:		https://wiki.gnome.org/Apps/EasyTAG
 BuildRequires:	appdata-tools
-BuildRequires:	appstream-glib
+BuildRequires:	appstream-glib >= 0.7.2
 BuildRequires:	autoconf >= 2.64
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	docbook-dtd44-xml
@@ -187,7 +187,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog HACKING NEWS README THANKS TODO
 %attr(755,root,root) %{_bindir}/easytag
-%{_datadir}/appdata/easytag.appdata.xml
+%{_datadir}/metainfo/easytag.appdata.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.EasyTAG.enums.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.EasyTAG.gschema.xml
 %{_desktopdir}/easytag.desktop
@@ -200,5 +200,5 @@ rm -rf $RPM_BUILD_ROOT
 %files -n nautilus-extension-easytag
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/nautilus/extensions-3.0/libnautilus-easytag.so
-%{_datadir}/appdata/easytag-nautilus.metainfo.xml
+%{_datadir}/metainfo/easytag-nautilus.metainfo.xml
 %endif
