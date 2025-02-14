@@ -33,7 +33,7 @@ BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:2.2
 BuildRequires:	libvorbis-devel >= 1:1.0.1
 BuildRequires:	libxslt-progs
-%{?with_nautilus:BuildRequires:	nautilus-devel >= 3.0}
+%{?with_nautilus:BuildRequires:	nautilus3-devel >= 3.0}
 BuildRequires:	opus-devel >= 1.0
 BuildRequires:	opusfile-devel
 BuildRequires:	pkgconfig >= 1:0.24
@@ -132,7 +132,7 @@ Summary:	Nautilus extension to open files with EasyTAG
 Summary(pl.UTF-8):	Rozszerzenie Nautilusa do otwierania plików w programie EasyTAG
 Group:		X11/Applications
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	nautilus >= 3.0.0
+Requires:	nautilus3 >= 3.0.0
 
 %description -n nautilus-extension-easytag
 Nautilus extension to open directories and audio files with EasyTAG
